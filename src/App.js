@@ -4,7 +4,7 @@ import { Router } from "./frontend/routes/Router";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <Router />
       <Footer />
