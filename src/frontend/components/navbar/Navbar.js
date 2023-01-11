@@ -1,6 +1,7 @@
 import React from "react";
 import { Person, SearchRounded, ShoppingCart } from "@material-ui/icons";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
     <>
@@ -10,9 +11,22 @@ export const Navbar = () => {
         </div>
         <div className="navbar__center">
           <ul>
-            <li>Home</li>
-            <li>Products</li>
-            <li>About Us</li>
+            <li>
+              <Link to="/" className="navbar__center__link">
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/products" className="navbar__center__link">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="navbar__center__link">
+                About Us
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="navbar__right">

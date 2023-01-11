@@ -4,8 +4,6 @@
   align-items: center;
   z-index: 1;
   box-shadow: var(--box-shadow);
-
-  outline: 1px solid black;
   left: 0;
   right: 0;
   top: 0;
@@ -24,12 +22,17 @@
   display: flex;
   padding: 0 1rem;
 }
-.navbar__center > ul > li {
-  margin: 0 0.5rem;
-  font-weight: var(--semi-bold);
-}
-.navbar__center > ul > li:hover {
+
+.navbar__center__link:hover {
   color: var(--color-pink);
+}
+
+.navbar__center__link {
+  color: black;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: var(--semi-bold);
 }
 .navbar__right {
   display: flex;
