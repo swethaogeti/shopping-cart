@@ -3,6 +3,7 @@
 :root {
   --color-gray-one: #f3f3f3;
   --color-pink: #ec2d6d;
+  --color-black: #222222;
 
   /* box-shadow */
   --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;

@@ -3,18 +3,31 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
   left: 0;
   right: 0;
   top: 0;
   background-color: white;
   flex-wrap: wrap;
   position: sticky;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 
+.navbar__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* outline: 1px solid black; */
+  /* padding: 0.4rem; */
+}
+
+.navbar__left > img {
+  width: 3rem;
+  margin: 0.5rem;
+}
 .navbar__left > h1 {
+  font-size: 2.4rem;
   color: var(--color-pink);
 }
 .navbar__center > ul {
@@ -36,11 +49,12 @@
 }
 .navbar__right {
   display: flex;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 }
 
 .navbar__right__icon {
   margin: 0 0.4rem;
   font-size: 1.8rem !important;
+  color: var(--color-pink);
   font-weight: var(--bold);
 }

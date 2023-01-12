@@ -7,7 +7,8 @@ export const Navbar = () => {
     <>
       <div className="navbar">
         <div className="navbar__left">
-          <h1>SHOPPY</h1>
+          <img src="/assets/favicon.ico"></img>
+          <h1>Story Shop</h1>
         </div>
         <div className="navbar__center">
           <ul>
