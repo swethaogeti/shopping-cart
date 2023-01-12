@@ -1,5 +1,10 @@
 import React from "react";
+import { ProductCard } from "../../components/productCard/ProductCard";
 
 export const ProductListingPage = () => {
-  return <div>ProductListingPAge</div>;
+  return (
+    <div>
+      <ProductCard />
+    </div>
+  );
 };

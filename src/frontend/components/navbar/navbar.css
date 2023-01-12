@@ -10,7 +10,7 @@
   background-color: white;
   flex-wrap: wrap;
   position: sticky;
-  padding: 0 1rem;
+  padding: 1rem;
   cursor: pointer;
 }
 
