@@ -1,7 +1,7 @@
 .productCard {
   position: relative;
   margin: 1rem;
-  max-width: 280px;
+  max-width: 270px;
   box-shadow: var(--box-shadow);
   display: flex;
   padding: 0.8rem;
@@ -11,9 +11,17 @@
   flex-basis: calc(33.3% - 1rem);
 }
 
-.productCard > img {
+.productCard__img {
+  width: 85%;
+  padding-top: 1rem;
+  margin: auto;
+  flex-shrink: 1;
+  object-fit: contain;
+}
+.productCard__img > img {
   width: 100%;
   height: auto;
+
   object-fit: cover;
 }
 
