@@ -1,0 +1,77 @@
+.cartCard {
+  display: flex;
+  max-width: 36em;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  margin: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-gray-one);
+  box-shadow: var(--box-shadow);
+}
+
+.cartCard__img {
+  width: 26.5%;
+
+  flex-shrink: 1;
+  object-fit: contain;
+}
+
+.cartCard__img > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.cartCard__desp {
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.cartCard__desp__price {
+  display: flex;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  align-items: center;
+}
+.cartCard__desp__price > span {
+  text-decoration: line-through;
+}
+
+.cartCard__desp__price > h3 {
+  color: var(--color-pink);
+}
+.cartCard__desp__buttons {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.cartCard__desp__btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cartCard__desp__btn > button {
+  background-color: white;
+  border: 1px solid var(--color-gray-one);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+
+.cartCard__desp__buttons > button {
+  border: none;
+  background-color: transparent;
+  color: rgb(98, 97, 97);
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 3px;
+  width: fit-content;
+  font-size: 1rem;
+  border: 3px solid var(--color-gray-one);
+  margin: 0.5rem 0rem;
+}
