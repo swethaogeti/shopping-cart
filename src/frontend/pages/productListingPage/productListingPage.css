@@ -1,0 +1,5 @@
+.productlisting {
+  display: flex;
+
+  flex-wrap: wrap;
+}
