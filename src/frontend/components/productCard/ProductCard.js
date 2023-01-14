@@ -5,7 +5,7 @@ export const ProductCard = () => {
   return (
     <div className="productCard">
       <div className="productCard__img">
-        <img src="https://m.media-amazon.com/images/I/81FummIc2eL._AC_UY327_FMwebp_QL65_.jpg"></img>
+        <img src="https://m.media-amazon.com/images/I/81crzbSdrwL._AC_UY327_FMwebp_QL65_.jpg"></img>
       </div>
 
       <div className="productCard__details">

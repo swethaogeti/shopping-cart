@@ -6,7 +6,7 @@ export const CartProductCard = () => {
     <div className="cartCard">
       <div className="cartCard__img">
         <img
-          src="https://m.media-amazon.com/images/I/81FummIc2eL._AC_UY327_FMwebp_QL65_.jpg"
+          src="https://m.media-amazon.com/images/I/81crzbSdrwL._AC_UY327_FMwebp_QL65_.jpg"
           alt="cart-product-img"
         ></img>
       </div>

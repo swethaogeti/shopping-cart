@@ -6,7 +6,7 @@ export const WishlistProductCard = () => {
     <div className="wishlistCard">
       <div className="wishlistCard__img">
         <img
-          src="https://oasiss.netlify.app/assets/Products/Snake-Plant/photo-1.webp"
+          src="https://m.media-amazon.com/images/I/81crzbSdrwL._AC_UY327_FMwebp_QL65_.jpg"
           alt="wishlist-product-img"
         ></img>
         <div className="wishlistCard__img__icon">

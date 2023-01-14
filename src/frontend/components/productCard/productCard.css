@@ -12,8 +12,7 @@
 }
 
 .productCard__img {
-  width: 85%;
-  padding-top: 1rem;
+  width: 100%;
   margin: auto;
   flex-shrink: 1;
   object-fit: contain;

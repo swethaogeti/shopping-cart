@@ -5,7 +5,7 @@ import {
   HomePage,
   LoginPage,
   ProductListingPage,
-  SignupPage,
+  SignUpPage,
   WishlistPage,
 } from "../pages";
 
@@ -16,7 +16,7 @@ export const Router = () => {
       <Route path="/products" element={<ProductListingPage />}></Route>
       <Route path="/cart" element={<CartPage />}></Route>
       <Route path="/wishlist" element={<WishlistPage />}></Route>
-      <Route path="/signup" element={<SignupPage />}></Route>
+      <Route path="/signup" element={<SignUpPage />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
     </Routes>
   );

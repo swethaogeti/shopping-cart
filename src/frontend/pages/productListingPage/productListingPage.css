@@ -1,6 +1,8 @@
 .productlisting {
   display: flex;
+  /* background-color: #fafafa; */
   align-items: center;
+  background-color: #fef2f4;
   justify-content: center;
   /* flex-direction: column; */
   flex-wrap: wrap;
