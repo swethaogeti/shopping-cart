@@ -1,0 +1,32 @@
+.cartTotal {
+  width: 22rem;
+  max-width: 26rem;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  border: 2px solid var(--color-gray-one);
+  border-radius: 5px;
+}
+
+.cartTotal__detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.cartTotal > h1,
+.cartTotal__detail > h1 {
+  font-size: 1.6rem;
+}
+
+.cartTotal > button {
+  width: 100%;
+  background-color: var(--color-pink);
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  border: none;
+}

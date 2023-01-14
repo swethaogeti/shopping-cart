@@ -42,8 +42,10 @@ export const Navbar = () => {
         </div>
         <div className="navbar__right">
           <SearchRounded className="navbar__right__icon" />
+          <Link to="/cart">
+            <ShoppingCart className="navbar__right__icon" />
+          </Link>
 
-          <ShoppingCart className="navbar__right__icon" />
           <Person className="navbar__right__icon" />
         </div>
       </div>
