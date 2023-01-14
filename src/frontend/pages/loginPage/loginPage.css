@@ -1,0 +1,6 @@
+.formPage__container > .login {
+  background-color: white;
+  color: var(--color-pink);
+  border: 2px solid gainsboro;
+  margin-top: 0rem;
+}
