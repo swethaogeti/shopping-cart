@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./loginPage.css";
 export const LoginPage = () => {
   return (
     <div className="formPage">
@@ -18,7 +18,7 @@ export const LoginPage = () => {
         <input type="password" id="password"></input>
 
         <button>Login</button>
-        <button>Login as a Guest</button>
+        <button className="login">Login as a Guest</button>
         <p>
           New here?{" "}
           <Link to="/signup" className="formPage__container__link">

@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./signUpPage.css";
-
+import "./formPage.css";
 export const SignUpPage = () => {
   return (
-    <div className="signUpPage">
-      <form className="signUpPage__container">
+    <div className="formPage">
+      <form className="formPage__container">
         <h1>Sign Up</h1>
         <label for="firstname">First Name*</label>
         <input type="name" id="firstname" placeholder="Sweety"></input>
@@ -27,7 +26,7 @@ export const SignUpPage = () => {
         <button>Sign Up</button>
         <p>
           Existing user?{" "}
-          <Link to="/login" className="signUpPage__container__link">
+          <Link to="/login" className="formPage__container__link">
             Login here!
           </Link>
         </p>
