@@ -1,11 +1,11 @@
-.formPage {
+.signUpPage {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80vh;
 }
 
-.formPage__container {
+.signUpPage__container {
   width: 25rem;
   max-width: 36rem;
   display: flex;
@@ -18,12 +18,12 @@
   background-color: white;
 }
 
-.formPage__container > label {
+.signUpPage__container > label {
   color: black;
   padding: 0.4rem 0;
 }
 
-.formPage__container > input {
+.signUpPage__container > input {
   padding: 0.4rem;
   width: 100%;
   outline: none;
@@ -32,7 +32,7 @@
   font-size: 1rem;
 }
 
-.formPage__container > button {
+.signUpPage__container > button {
   color: white;
   border: 1px solid var(--color-gray-one);
   background-color: var(--color-pink);
@@ -42,11 +42,10 @@
   font-size: 1rem;
   font-weight: bold;
 }
-
-.formPage__container > p {
+.signUpPage__container > p {
   font-size: 0.9rem;
 }
 
-.formPage__container__link {
+.signUpPage__container__link {
   color: var(--color-pink);
 }
