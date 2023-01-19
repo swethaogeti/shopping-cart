@@ -2,7 +2,8 @@ import axios from "axios";
 
 export const updateQuantityOfProductInCartService = async (
   token,
-  productId
+  productId,
+  type
 ) => {
   try {
     const { data } = await axios.post(
