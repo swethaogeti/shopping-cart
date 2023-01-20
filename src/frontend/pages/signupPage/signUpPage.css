@@ -16,6 +16,7 @@
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   background-color: white;
+  cursor: pointer;
 }
 
 .formPage__container > label {
@@ -44,6 +45,7 @@
   border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .formPage__container > p {
   font-size: 0.9rem;

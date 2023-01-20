@@ -18,8 +18,7 @@ export const SignUpPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  console.log(location);
-  console.log(from);
+
   const { loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -78,7 +77,8 @@ export const SignUpPage = () => {
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         ></input>
-
+        {/* <label htmlFor="confirm">Confirm Password*</label>
+        <input type="password" id="confirm"></input> */}
         <button>Sign Up</button>
         <ToastContainer
           position="top-center"
