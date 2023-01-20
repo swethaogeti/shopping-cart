@@ -31,7 +31,10 @@
   border-radius: 5px;
   font-size: 1rem;
 }
-
+.formPage__container > input::placeholder {
+  color: rgb(139, 139, 139);
+  font-size: 0.9rem;
+}
 .formPage__container > button {
   color: white;
   border: 1px solid var(--color-gray-one);

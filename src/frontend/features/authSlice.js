@@ -13,6 +13,7 @@ const signup = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const { data } = await signUpService(user);
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue("error in signup occured in service");
@@ -73,4 +74,4 @@ const authSlice = createSlice({
 
 const { signout } = authSlice.actions;
 const authReducer = authSlice.reducer;
-export { signout, authReducer };
+export { signout, authReducer, signup, login };

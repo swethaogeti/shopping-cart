@@ -8,14 +8,14 @@ export const LoginPage = () => {
       <form className="formPage__container">
         <h1>login</h1>
 
-        <label for="email">Email*</label>
+        <label htmlFor="email">Email*</label>
         <input
           type="email"
           id="email"
           placeholder="sweety123@gmail.com"
         ></input>
 
-        <label for="password">Password*</label>
+        <label htmlFor="password">Password*</label>
         <input type="password" id="password"></input>
 
         <button>Login</button>
