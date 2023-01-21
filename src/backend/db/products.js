@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    id: uuid(),
+    _id: uuid(),
     title: "Gone Girl",
     author: "GILLIAN GLYNN",
     description:
@@ -21,7 +21,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    _id: uuid(),
     title: "Stardust",
     author: "Neil Gaiman (2010)",
     description:
@@ -35,7 +35,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Alchemist ",
     author: "Paulo Coelho",
     description:
@@ -49,7 +49,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    _id: uuid(),
     title: "Beloved",
     author: "Toni Morrison",
     description:
@@ -63,7 +63,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Love Hypothesis",
     author: "Ali Hazelwood",
     description:
@@ -76,11 +76,11 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/41kaBn+u9pL._SY346_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "One Hundred Years of Solitude",
     author: "Gabriel Garcia Marquez and Gregory Rabassa ",
     description:
-      "'Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice Gabriel Garcia Marquez's great masterpiece is the story of seven generations of the Buendia family and of Macondo, the town they have built. Though little more than a settlement surrounded by mountains, Macondo has its wars and disasters, even its wonders and its miracles. A microcosm of Columbian life, its secrets lie hidden, encoded in a book, and only Aureliano Buendia can fathom its mysteries and reveal its shrouded destiny. Blending political reality with magic realism, fantasy and comic invention, One Hundred Years of Solitude is one of the most daringly original works of the twentieth century.",
+      "Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice Gabriel Garcia Marquez's great masterpiece is the story of seven generations of the Buendia family and of Macondo, the town they have built. Though little more than a settlement surrounded by mountains, Macondo has its wars and disasters, even its wonders and its miracles. A microcosm of Columbian life, its secrets lie hidden, encoded in a book, and only Aureliano Buendia can fathom its mysteries and reveal its shrouded destiny. Blending political reality with magic realism, fantasy and comic invention, One Hundred Years of Solitude is one of the most daringly original works of the twentieth century.",
     genre: "Classic",
     originalPrice: 1666,
     discount: 80,
@@ -90,7 +90,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    _id: uuid(),
     title: "It Ends With Us",
     author: "Colleen Hoover",
     description:
@@ -104,7 +104,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    _id: uuid(),
     title: "Call me by your name",
     author: "Armie Hammer",
     description:
@@ -114,10 +114,10 @@ export const products = [
     discount: 74,
     discountedPrice: 155,
     rating: 5,
-    img: "https://m.media-amazon.com/images/I/51kOcECUQcL.jpg",
+    img: "https://m.media-amazon.com/images/I/812SKExc1tL.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The girl with the dragon tatto",
     author: "Stieg Larrson",
     description:
@@ -130,9 +130,9 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/71k4nnsuFyL._AC_UY327_FMwebp_QL65_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "Misery",
-    author: " Stephen King ",
+    author: "Stephen King",
     description:
       "King's Classic bestseller about a famous novelist held hostage by his Number One Fan.Misery Chastain is dead. Paul Sheldon has just killed her - with relief, with joy. Misery has made him rich; she was the heroine of a string of bestsellers. And now he wants to get on to some real writing.That's when the car accident happens, and he wakes up in pain in a strange bed. But it isn't hospital. Annie Wilkes has pulled him from the wreck, brought him to her remote mountain home, splinted and set his mangled legs.The good news is that Annie was a nurse and has pain-killing drugs. The bad news is that she has long been Paul's Number One Fan. And when she finds out what Paul had done to Misery, she doesn't like it. She doesn't like it at all. Paul Sheldon used to write for a living. Now he's writing to stay alive.",
     genre: "Thriller",
@@ -143,7 +143,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/51AILCYmA6L._AC_UY327_FMwebp_QL65_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Great Gatsby",
     author: "F.Scott Fitzgerald ",
     description:
@@ -153,10 +153,10 @@ export const products = [
     discount: 15,
     discountedPrice: 123,
     rating: 4.3,
-    img: "https://m.media-amazon.com/images/I/51ceqZss88S._SX460_BO1,204,203,200_.jpg",
+    img: "https://m.media-amazon.com/images/I/41XMaCHkrgL.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The wizard of earthsea",
     author: "Ursula K. Le Guin ",
     description:
@@ -169,7 +169,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/51ArFwyywQL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Da Vinci Code",
     author: "Dan Brown",
     description:
@@ -182,7 +182,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/513jDWxi4nL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Dresden Files",
     author: "Jim Butcher",
     description:
@@ -195,7 +195,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/71otDvekspL._AC_UY327_FMwebp_QL65_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Lord of Rings",
     author: " J. R. R. Tolkien ",
     description:
@@ -208,7 +208,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/51myt0GXIUL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Little Prince",
     author: "Antoine de Saint-Exupéry",
     description:
@@ -221,7 +221,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/71j1A2OX3nL._AC_UY327_FMwebp_QL65_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "Red,White and Royal Blue",
     author: "Casey McQuiston",
     description:
@@ -234,7 +234,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/41hv25yqOCL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "To Kill a Mockingbird",
     author: "Harper Lee",
     description:
@@ -244,10 +244,10 @@ export const products = [
     discount: 0,
     discountedPrice: 210,
     rating: 3.5,
-    img: "https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UY327_FMwebp_QL65_.jpg",
+    img: "https://m.media-amazon.com/images/I/41j-s9fHJcL._SY346_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "The Wheel of Times",
     author: "Robert Jordan",
     description:
@@ -260,7 +260,7 @@ export const products = [
     img: "https://m.media-amazon.com/images/I/51N1jSYd19L._SX316_BO1,204,203,200_.jpg",
   },
   {
-    id: uuid(),
+    _id: uuid(),
     title: "In The Woods",
     author: "Tana French",
     description:

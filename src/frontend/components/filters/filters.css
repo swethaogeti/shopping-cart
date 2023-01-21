@@ -1,0 +1,14 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid black;
+}
+
+.filters__filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters__header {
+  display: flex;
+}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   CartProductCard,
+  Filters,
   Footer,
   ProductCard,
   WishlistProductCard,
@@ -17,13 +18,15 @@ export const ProductListingPage = () => {
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
-  console.log(products);
+
   return (
     <div className="productlisting">
-      <button onClick={() => navigate("/signup")}>kshdhfls</button>
-      <ProductCard />
-      <CartProductCard />
-      <WishlistProductCard />
+      <Filters />
+      <div className="productlisting__products">
+        {products.map((product) => {
+          return <ProductCard key={product._id} product={product} />;
+        })}
+      </div>
     </div>
   );
 };
