@@ -1,30 +1,46 @@
-import { ShoppingCartRounded } from "@material-ui/icons";
+import {
+  FavoriteBorderOutlined,
+  FavoriteOutlined,
+  ShoppingCartRounded,
+} from "@material-ui/icons";
 import React from "react";
 import "./productCard.css";
+
 export const ProductCard = ({ product }) => {
-  console.log(product);
+  const {
+    _id,
+    img,
+    author,
+    title,
+    discount,
+    description,
+    originalPrice,
+    discountedPrice,
+  } = product;
   return (
-    <div className="productCard">
+    <div className="productCard" key={_id}>
       <div className="productCard__img">
-        <img src={product.img}></img>
+        <img src={img} alt={title}></img>
+        <div className="productCard__img__icon">
+          <FavoriteBorderOutlined className="icon" />
+        </div>
       </div>
 
       <div className="productCard__details">
         <div className="productCard__details__desp">
-          <h3>{product.title}</h3>
-          <p>by xyz kate</p>
+          <h3>{title}</h3>
+          <p>by {author}</p>
         </div>
         <div className="productCard__details__price">
-          <h4>₹2999</h4>
-          <span>₹3999</span>
-          <h3>25% Off</h3>
+          <h4>₹{discountedPrice}</h4>
+          <span>₹{originalPrice}</span>
+          <h3>{discount}% Off</h3>
         </div>
-        {/* <div> */}
+
         <button>
           <ShoppingCartRounded />
           <h4>Go to Cart</h4>
         </button>
-        {/* </div> */}
       </div>
     </div>
   );

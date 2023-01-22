@@ -1,10 +1,16 @@
 import React from "react";
-import { CartTotal } from "../../components";
+import {
+  CartProductCard,
+  CartTotal,
+  WishlistProductCard,
+} from "../../components";
 import "./cartPage.css";
 export const CartPage = () => {
   return (
     <div className="cartPage">
       <CartTotal />
+      <CartProductCard />
+      <WishlistProductCard />
     </div>
   );
 };
