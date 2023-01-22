@@ -6,7 +6,7 @@ export const updateQuantityOfProductInCartService = async (
   type
 ) => {
   try {
-    const { data } = await axios.post(
+    const data = await axios.post(
       `/api/user/cart/${productId}`,
       {
         action: {
@@ -21,7 +21,7 @@ export const updateQuantityOfProductInCartService = async (
       }
     );
 
-    return data.cart;
+    return data;
   } catch (err) {
     console.log(err.message);
     return;
