@@ -25,9 +25,11 @@ const getCartProducts = createAsyncThunk(
 
 const addProductToCart = createAsyncThunk(
   "add/addProductToCart",
-  async (token, product, { rejectWithValue }) => {
+  async ({ token, product }, { rejectWithValue }) => {
     try {
       const { data } = await addProductToCartService(token, product);
+      console.log(product);
+      console.log(data);
       return data;
     } catch (error) {
       rejectWithValue(error);

@@ -1,9 +1,10 @@
 import {
   FavoriteBorderOutlined,
-  FavoriteOutlined,
   ShoppingCartRounded,
 } from "@material-ui/icons";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "../../features/cartSlice";
 import "./productCard.css";
 
 export const ProductCard = ({ product }) => {
@@ -17,6 +18,14 @@ export const ProductCard = ({ product }) => {
     originalPrice,
     discountedPrice,
   } = product;
+
+  const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.auth);
+  console.log(token);
+  const handleAddToCart = async (token, product) => {
+    const res = await dispatch(addProductToCart(token, product));
+    console.log(res);
+  };
   return (
     <div className="productCard" key={_id}>
       <div className="productCard__img">
@@ -37,7 +46,7 @@ export const ProductCard = ({ product }) => {
           <h3>{discount}% Off</h3>
         </div>
 
-        <button>
+        <button onClick={() => handleAddToCart({ token, product })}>
           <ShoppingCartRounded />
           <h4>Go to Cart</h4>
         </button>
