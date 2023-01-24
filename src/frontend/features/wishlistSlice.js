@@ -23,9 +23,10 @@ const getWishlistProducts = createAsyncThunk(
 );
 const moveProductToWishlist = createAsyncThunk(
   "move/moveProductToWishlist",
-  async (token, product, { rejectWithValue }) => {
+  async ({ token, product }, { rejectWithValue }) => {
     try {
       const { data } = await moveProductToWishlistService(token, product);
+      console.log(data);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -35,7 +36,7 @@ const moveProductToWishlist = createAsyncThunk(
 
 const removeProductFromWishlist = createAsyncThunk(
   "remove/removeProductFromWishlist",
-  async (token, productId, { rejectWithValue }) => {
+  async ({ token, productId }, { rejectWithValue }) => {
     try {
       const { data } = await removeProductFromWishlistService(token, productId);
       return data;
@@ -48,12 +49,12 @@ const wishlistSlice = createSlice({
   name: "wishlist",
   initialState,
   extraReducers: {
-    [getWishlistProducts.pending]: (state, { payload }) => {
+    [getWishlistProducts.pending]: (state) => {
       state.isloading = true;
     },
     [getWishlistProducts.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      state.wishlist = payload;
+      state.wishlist = payload.wishlist;
       state.error = "";
     },
     [getWishlistProducts.rejected]: (state, { payload }) => {
@@ -62,17 +63,18 @@ const wishlistSlice = createSlice({
     },
 
     [moveProductToWishlist.fulfilled]: (state, { payload }) => {
+      console.log(payload);
       state.isloading = false;
-      state.wishlist = payload;
+      state.wishlist = payload.wishlist;
     },
     [moveProductToWishlist.rejected]: (state, { payload }) => {
       state.isloading = false;
-      state.error = payload;
+      state.error = payload.wishlist;
     },
 
     [removeProductFromWishlist.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      state.wishlist = payload;
+      state.wishlist = payload.wishlist;
     },
     [removeProductFromWishlist.rejected]: (state, { payload }) => {
       state.isloading = false;

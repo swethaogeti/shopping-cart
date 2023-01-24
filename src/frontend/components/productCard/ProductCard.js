@@ -5,6 +5,7 @@ import {
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToCart } from "../../features/cartSlice";
+import { moveProductToWishlist } from "../../features/wishlistSlice";
 import "./productCard.css";
 
 export const ProductCard = ({ product }) => {
@@ -21,9 +22,13 @@ export const ProductCard = ({ product }) => {
 
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
-  console.log(token);
+
   const handleAddToCart = async (token, product) => {
     const res = await dispatch(addProductToCart(token, product));
+  };
+
+  const handleMoveToWishlist = async (token, product) => {
+    const res = await dispatch(moveProductToWishlist(token, product));
     console.log(res);
   };
   return (
@@ -31,7 +36,10 @@ export const ProductCard = ({ product }) => {
       <div className="productCard__img">
         <img src={img} alt={title}></img>
         <div className="productCard__img__icon">
-          <FavoriteBorderOutlined className="icon" />
+          <FavoriteBorderOutlined
+            className="icon"
+            onClick={() => handleMoveToWishlist({ token, product })}
+          />
         </div>
       </div>
 

@@ -1,14 +1,22 @@
 import { Delete, Favorite } from "@material-ui/icons";
 import React from "react";
 import "./wishlistProductCard.css";
-export const WishlistProductCard = () => {
+export const WishlistProductCard = ({ product }) => {
+  const {
+    _id,
+    img,
+    author,
+    title,
+    discount,
+    description,
+    originalPrice,
+    discountedPrice,
+  } = product;
+
   return (
     <div className="wishlistCard">
       <div className="wishlistCard__img">
-        <img
-          src="https://m.media-amazon.com/images/I/81crzbSdrwL._AC_UY327_FMwebp_QL65_.jpg"
-          alt="wishlist-product-img"
-        ></img>
+        <img src={img} alt="wishlist-product-img"></img>
         <div className="wishlistCard__img__icon">
           <Favorite />
         </div>
@@ -16,19 +24,15 @@ export const WishlistProductCard = () => {
 
       <div className="wishlistCard__desp">
         <div>
-          <h2>It ends with us</h2>
-          <p>by Collen Hoover</p>
+          <h2>{title}</h2>
+          <p>by {author}</p>
           <div className="wishlistCard__desp__price">
-            <h2>₹2999</h2>
-            <span>₹3999</span>
-            <h3>25% Off</h3>
+            <h2>₹{discountedPrice}</h2>
+            <span>₹{originalPrice}</span>
+            <h3>{discount}% Off</h3>
           </div>
 
-          <p>
-            with Atlas. Colleen Hoover tells sequel to the #1 Sunday Times
-            bestseller It Ends with Us. with Atlas. Colleen Hoover tells sequel
-            to the #1 Sunday Times bestseller It Ends with Us. with Atlas.
-          </p>
+          <p>{description}</p>
         </div>
 
         <div className="wishlistCard__desp__btn">

@@ -45,8 +45,9 @@ export const Navbar = () => {
           <Link to="/cart">
             <ShoppingCart className="navbar__right__icon" />
           </Link>
-
-          <Person className="navbar__right__icon" />
+          <Link to="/wishlist">
+            <Person className="navbar__right__icon" />
+          </Link>
         </div>
       </div>
     </>

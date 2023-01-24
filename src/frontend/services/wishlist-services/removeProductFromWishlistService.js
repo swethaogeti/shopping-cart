@@ -2,12 +2,12 @@ import axios from "axios";
 
 export const removeProductFromWishlistService = async (token, productId) => {
   try {
-    const { data } = await axios.delete(`/api/user/wishlist/${productId}`, {
+    const data = await axios.delete(`/api/user/wishlist/${productId}`, {
       headers: {
         authorization: token,
       },
     });
-    return data.wishlist;
+    return data;
   } catch (err) {
     console.log(err.message);
   }
