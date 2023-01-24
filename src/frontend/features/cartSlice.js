@@ -16,6 +16,7 @@ const getCartProducts = createAsyncThunk(
   async (token, { rejectWithValue }) => {
     try {
       const { data } = await getCartService(token);
+      console.log(data);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -74,8 +75,9 @@ const cartSlice = createSlice({
     },
 
     [getCartProducts.fulfilled]: (state, { payload }) => {
+      console.log(payload);
       state.isloading = false;
-      state.cart = payload;
+      state.cart = payload.cart;
       state.error = "";
     },
 

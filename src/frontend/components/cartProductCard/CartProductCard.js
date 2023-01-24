@@ -1,24 +1,32 @@
 import { Add, Remove } from "@material-ui/icons";
 import React from "react";
 import "./cartProductCard.css";
-export const CartProductCard = () => {
+export const CartProductCard = ({ product }) => {
+  const {
+    _id,
+    img,
+    author,
+    title,
+    discount,
+    description,
+    originalPrice,
+    discountedPrice,
+  } = product;
+
   return (
     <div className="cartCard">
       <div className="cartCard__img">
-        <img
-          src="https://m.media-amazon.com/images/I/81crzbSdrwL._AC_UY327_FMwebp_QL65_.jpg"
-          alt="cart-product-img"
-        ></img>
+        <img src={img} alt="cart-product-img"></img>
       </div>
 
       <div className="cartCard__desp">
         <div>
-          <h2>It ends with us</h2>
-          <p>by Collen Hoover</p>
+          <h2>{title}</h2>
+          <p>by {author}</p>
           <div className="cartCard__desp__price">
-            <h2>₹2999</h2>
-            <span>₹3999</span>
-            <h3>25% Off</h3>
+            <h2>₹{discountedPrice}</h2>
+            <span>₹{originalPrice}</span>
+            <h3>{discount}% Off</h3>
           </div>
         </div>
 

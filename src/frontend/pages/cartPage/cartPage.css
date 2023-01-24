@@ -1,6 +1,15 @@
 .cartPage {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
+  width: 90%;
+
+  margin: auto;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.cartPage__products {
+  flex: 1;
+}
+.cartPage__total {
 }
