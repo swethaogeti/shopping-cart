@@ -40,7 +40,7 @@ const addProductToCart = createAsyncThunk(
 
 const removeProductFromCart = createAsyncThunk(
   "remove/removeProductFromCart",
-  async (token, productId, { rejectWithValue }) => {
+  async ({ token, productId }, { rejectWithValue }) => {
     try {
       const { data } = await removeProductFromCartService(token, productId);
       return data;
@@ -88,7 +88,7 @@ const cartSlice = createSlice({
 
     [addProductToCart.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      state.cart = payload;
+      state.cart = payload.cart;
       state.error = "";
     },
     [addProductToCart.rejected]: (state, { payload }) => {
@@ -97,7 +97,7 @@ const cartSlice = createSlice({
     },
     [removeProductFromCart.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      state.cart = payload;
+      state.cart = payload.cart;
       state.error = "";
     },
     [removeProductFromCart.rejected]: (state, { payload }) => {
@@ -107,7 +107,7 @@ const cartSlice = createSlice({
 
     [updateQuantityOfProductInCart.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      state.cart = payload;
+      state.cart = payload.cart;
       state.error = "";
     },
     [updateQuantityOfProductInCart.rejected]: (state, { payload }) => {

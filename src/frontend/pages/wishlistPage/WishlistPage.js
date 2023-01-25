@@ -11,7 +11,7 @@ export const WishlistPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getWishlistProducts(token));
-  });
+  }, []);
   return (
     <div className="wishlist">
       <div className="wishlist__products">

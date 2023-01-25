@@ -1,5 +1,8 @@
 import { Delete, Favorite } from "@material-ui/icons";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "../../features/cartSlice";
+import { removeProductFromWishlist } from "../../features/wishlistSlice";
 import "./wishlistProductCard.css";
 export const WishlistProductCard = ({ product }) => {
   const {
@@ -13,12 +16,26 @@ export const WishlistProductCard = ({ product }) => {
     discountedPrice,
   } = product;
 
+  const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.auth);
+
+  const handleAddToCart = async (token, product) => {
+    const res = await dispatch(addProductToCart(token, product));
+  };
+  const handleDeleteProductFromWishlist = async (token, productId) => {
+    const res = await dispatch(removeProductFromWishlist(token, productId));
+  };
+
   return (
     <div className="wishlistCard">
       <div className="wishlistCard__img">
         <img src={img} alt="wishlist-product-img"></img>
         <div className="wishlistCard__img__icon">
-          <Favorite />
+          <Favorite
+            onClick={() =>
+              handleDeleteProductFromWishlist({ token, productId: _id })
+            }
+          />
         </div>
       </div>
 
@@ -36,13 +53,19 @@ export const WishlistProductCard = ({ product }) => {
         </div>
 
         <div className="wishlistCard__desp__btn">
-          <button>Add To Cart</button>
+          <button onClick={() => handleAddToCart({ token, product })}>
+            Add To Cart
+          </button>
         </div>
       </div>
 
       <div className="wishlistCard__delete">
         <button className="wishlistCard__delete__icon">
-          <Delete />
+          <Delete
+            onClick={() =>
+              handleDeleteProductFromWishlist({ token, productId: _id })
+            }
+          />
         </button>
       </div>
     </div>

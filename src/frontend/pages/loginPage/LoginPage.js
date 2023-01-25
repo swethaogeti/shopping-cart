@@ -59,7 +59,7 @@ export const LoginPage = () => {
         ></input>
         <ToastContainer
           position="top-center"
-          autoClose={2000}
+          autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -69,6 +69,7 @@ export const LoginPage = () => {
           pauseOnHover
           theme="light"
         />
+
         <button>Login</button>
         <button
           className="login"

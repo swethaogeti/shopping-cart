@@ -1,5 +1,7 @@
 import { Add, Remove } from "@material-ui/icons";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeProductFromCart } from "../../features/cartSlice";
 import "./cartProductCard.css";
 export const CartProductCard = ({ product }) => {
   const {
@@ -12,6 +14,12 @@ export const CartProductCard = ({ product }) => {
     originalPrice,
     discountedPrice,
   } = product;
+
+  const { token } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const handleDeleteProductFromCart = async (token, productId) => {
+    const res = await dispatch(removeProductFromCart(token, productId));
+  };
 
   return (
     <div className="cartCard">
@@ -41,7 +49,13 @@ export const CartProductCard = ({ product }) => {
             </button>
           </div>
 
-          <button>Remove</button>
+          <button
+            onClick={() =>
+              handleDeleteProductFromCart({ token, productId: _id })
+            }
+          >
+            Remove
+          </button>
         </div>
       </div>
       <div className="cartCard__total">
