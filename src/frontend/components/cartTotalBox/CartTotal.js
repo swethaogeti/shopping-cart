@@ -1,6 +1,31 @@
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { cartTotal } from "../../features/cartSlice";
 import "./cartTotal.css";
+
+// cartTotalProducts: 0,
+//   cartTotalPrice: 0,
+//   cartTotalDiscount: 0,
+//   cartTotalAmount: 0,
 export const CartTotal = () => {
+  const dispatch = useDispatch();
+  const {
+    cartTotalAmount,
+    cart,
+    cartTotalDiscount,
+    cartTotalPrice,
+    cartTotalProducts,
+  } = useSelector((state) => state.cart);
+  console.log(
+    cartTotalAmount,
+    cartTotalPrice,
+    cartTotalDiscount,
+    cartTotalProducts
+  );
+  useEffect(() => {
+    dispatch(cartTotal());
+  }, [cart]);
   return (
     <div className="cartTotal">
       <h1>Price Deatils</h1>

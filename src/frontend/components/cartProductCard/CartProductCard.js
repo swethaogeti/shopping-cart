@@ -13,10 +13,12 @@ export const CartProductCard = ({ product }) => {
     description,
     originalPrice,
     discountedPrice,
+    qty,
+    count,
   } = product;
-
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
   const handleDeleteProductFromCart = async (token, productId) => {
     const res = await dispatch(removeProductFromCart(token, productId));
   };
@@ -43,7 +45,7 @@ export const CartProductCard = ({ product }) => {
             <button>
               <Add />
             </button>
-            <h3>1</h3>
+            <h3>{qty}</h3>
             <button>
               <Remove />
             </button>
