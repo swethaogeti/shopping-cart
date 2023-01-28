@@ -4,10 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartTotal } from "../../features/cartSlice";
 import "./cartTotal.css";
 
-// cartTotalProducts: 0,
-//   cartTotalPrice: 0,
-//   cartTotalDiscount: 0,
-//   cartTotalAmount: 0,
 export const CartTotal = () => {
   const dispatch = useDispatch();
   const {
@@ -25,18 +21,24 @@ export const CartTotal = () => {
   );
   useEffect(() => {
     dispatch(cartTotal());
-  }, [cart]);
+  }, [
+    cart,
+    cartTotalAmount,
+    cartTotalDiscount,
+    cartTotalPrice,
+    cartTotalProducts,
+  ]);
   return (
     <div className="cartTotal">
       <h1>Price Deatils</h1>
       <hr></hr>
       <div className="cartTotal__detail">
-        <p>Price(0 items) </p>
-        <h4>₹0</h4>
+        <p>Price({cartTotalProducts} items) </p>
+        <h4>₹{cartTotalPrice}</h4>
       </div>
       <div className="cartTotal__detail">
         <p>Discount </p>
-        <h4>₹0</h4>
+        <h4>₹{cartTotalDiscount}</h4>
       </div>
       <div className="cartTotal__detail">
         <p>Delivery charges </p>
@@ -45,7 +47,7 @@ export const CartTotal = () => {
       <hr />
       <div className="cartTotal__detail">
         <h1>Total Amount</h1>
-        <h3>₹097766</h3>
+        <h3>₹{cartTotalAmount}</h3>
       </div>
       <hr />
       <button>Proceed to Checkout</button>

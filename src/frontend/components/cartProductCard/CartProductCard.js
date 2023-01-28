@@ -1,7 +1,10 @@
 import { Add, Remove } from "@material-ui/icons";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeProductFromCart } from "../../features/cartSlice";
+import {
+  removeProductFromCart,
+  updateQuantityOfProductInCart,
+} from "../../features/cartSlice";
 import "./cartProductCard.css";
 export const CartProductCard = ({ product }) => {
   const {
@@ -23,6 +26,13 @@ export const CartProductCard = ({ product }) => {
     const res = await dispatch(removeProductFromCart(token, productId));
   };
 
+  const handleUpdateQuantity = async (token, productId, type) => {
+    const res = await dispatch(
+      updateQuantityOfProductInCart(token, productId, type)
+    );
+    console.log(res);
+  };
+
   return (
     <div className="cartCard">
       <div className="cartCard__img">
@@ -42,12 +52,32 @@ export const CartProductCard = ({ product }) => {
 
         <div className="cartCard__desp__buttons">
           <div className="cartCard__desp__btn">
-            <button>
-              <Add />
-            </button>
-            <h3>{qty}</h3>
-            <button>
+            <button
+              onClick={() => {
+                qty === 1
+                  ? handleDeleteProductFromCart({ token, productId: _id })
+                  : handleUpdateQuantity({
+                      token,
+                      productId: _id,
+                      type: "decrement",
+                    });
+              }}
+            >
               <Remove />
+            </button>
+
+            <h3>{qty}</h3>
+
+            <button
+              onClick={() => {
+                handleUpdateQuantity({
+                  token,
+                  productId: _id,
+                  type: "increment",
+                });
+              }}
+            >
+              <Add />
             </button>
           </div>
 
@@ -62,7 +92,7 @@ export const CartProductCard = ({ product }) => {
       </div>
       <div className="cartCard__total">
         <p>Total Price</p>
-        <h2>₹2999</h2>
+        <h2>₹{discountedPrice * qty}</h2>
       </div>
     </div>
   );

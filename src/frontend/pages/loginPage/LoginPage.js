@@ -23,8 +23,8 @@ export const LoginPage = () => {
         USER_DATA,
         JSON.stringify(response.payload.foundUser)
       );
-      toast("Login successful");
       navigate(from, { replace: true });
+      toast("Login successful");
     } else {
       toast("Login Failed");
     }
@@ -77,6 +77,7 @@ export const LoginPage = () => {
             e.preventDefault();
             setUser({ email: "sweety@gmail.com", password: "sweety555" });
             handleLogin({ email: "sweety@gmail.com", password: "sweety555" });
+            toast("Login successful");
           }}
         >
           Login as a Guest

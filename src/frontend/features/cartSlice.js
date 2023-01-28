@@ -55,13 +55,14 @@ const removeProductFromCart = createAsyncThunk(
 
 const updateQuantityOfProductInCart = createAsyncThunk(
   "update/updateQuantityOfProductInCart",
-  async (token, productId, type, { rejectWithValue }) => {
+  async ({ token, productId, type }, { rejectWithValue }) => {
     try {
-      const data = await updateQuantityOfProductInCartService(
+      const { data } = await updateQuantityOfProductInCartService(
         token,
         productId,
         type
       );
+      console.log(data);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -76,6 +77,7 @@ const cartSlice = createSlice({
     cartTotal: (state) => {
       state.cart.reduce(
         (acc, curr) => {
+          console.log(acc, curr);
           state.cartTotalProducts = acc.cartTotalProducts + curr.qty;
           state.cartTotalPrice =
             acc.cartTotalPrice + curr.qty * curr.originalPrice;
@@ -132,6 +134,7 @@ const cartSlice = createSlice({
     },
 
     [updateQuantityOfProductInCart.fulfilled]: (state, { payload }) => {
+      console.log(payload);
       state.isloading = false;
       state.cart = payload.cart;
       state.error = "";
