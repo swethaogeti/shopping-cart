@@ -26,7 +26,7 @@ export const products = [
     author: "Neil Gaiman (2010)",
     description:
       "If anyone deserves to be on this list twice, it’s Neil Gaiman. Stardust is a magical fantasy novel that’s a delight to read at any age. It’s about a young man called Tristran Thorn, who vows to find a star for the woman he loves after they see it fall from the night sky.What follows is a fairy tale that weaves in stories, characters and settings that are already embedded in our cultural make-up, like pirates, spells, curses, witches, power struggles, falling stars, otherworldly beings and much more. Gaiman said I wanted to write a story that would feel, to the reader, like something he or she had always known – and thats the enduring appeal of Stardust. The book was adapted into a movie in 2007 with a star-studded cast, including Robert De Niro, Michelle Pfeiffer, and Claire Danes. Once youve read the book, you should find it on your go-to streaming service, as it does Neil Gaimans original tale justice",
-    genre: "fantasy",
+    genre: "Fantasy",
     originalPrice: 575,
     discount: 15,
     discountedPrice: 489,
@@ -252,7 +252,7 @@ export const products = [
     author: "Robert Jordan",
     description:
       "SOON TO BE A MAJOR AMAZON PRIME TV SERIESPrepare to turn the Wheel of Time - discover the first novel in one of the most influential and popular fantasy epics ever published.When their village is attacked by terrifying creatures, Rand al'Thor and his friends are forced to flee for their lives. An ancient evil is stirring, and its servants are scouring the land for the Dragon Reborn - the prophesised hero who can deliver the world from darkness. In this Age of myth and legend, the Wheel of Time turns. What was, what may be, and what is, may yet fall under the Shadow. ONE OF TIME MAGAZINE'S TOP 100 FANTASY BOOKS OF ALL TIME'Epic in every sense' - Sunday Times'With the Wheel of Time, Jordan has come to dominate the world that Tolkien began to reveal' New York Times'[The] huge ambitious Wheel of Time series helped redefine the genre' George R. R. Martin'A fantasy phenomenon' SFX",
-    genre: "fantasy",
+    genre: "Fantasy",
     originalPrice: 599,
     discount: 34,
     discountedPrice: 396,

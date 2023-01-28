@@ -1,2 +1,12 @@
 export const USER_TOKEN = "USER_TOKEN";
 export const USER_DATA = "USER_DATA";
+export const CLEAR_FILTERS = "CLEAR_FILTERS";
+export const CHANGE_SORT_BY = "CHANGE_SORT_BY";
+export const SORT_BY_LOW_TO_HIGH = "SORT_BY_LOW_TO_HIGH";
+export const SORT_BY_HIGH_TO_LOW = "SORT_BY_HIGH_TO_LOW";
+export const CHANGE_CATEGORY = "CHANGE_CATEGORY";
+export const CHANGE_RATING = "CHANGE_RATING";
+export const RATING_4_AND_MORE = "RATING_4_AND_MORE";
+export const RATING_3_AND_MORE = "RATING_3_AND_MORE";
+export const RATING_2_AND_MORE = "RATING_2_AND_MORE";
+export const RATING_1_AND_MORE = "RATING_1_AND_MORE";
