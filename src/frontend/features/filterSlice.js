@@ -17,11 +17,18 @@ export const filterSlice = createSlice({
     },
     getProductsByCategory: (state, { payload }) => {
       console.log(payload);
-      state.categories = state.categories.some(
-        (category) => category === payload
-      )
-        ? state.categories.filter((category) => category !== payload)
-        : payload;
+      // const newCategory = state.categories.some(
+      //   (category) => category === payload
+      // )
+      //   ? state.categories.pop((category) => category !== payload)
+      //   : payload;
+      // state.categories.push(newCategory);
+
+      if (state.categories.some((category) => category === payload)) {
+        state.categories.pop((category) => category !== payload);
+      } else {
+        state.categories.push(payload);
+      }
     },
     clearFilters: (state) => {
       state = initialState;
