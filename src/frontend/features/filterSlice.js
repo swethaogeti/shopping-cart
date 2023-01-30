@@ -9,20 +9,14 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     sortByPrice: (state, { payload }) => {
-      console.log(payload);
       state.sortBy = payload;
     },
     sortByRating: (state, { payload }) => {
+      console.log(payload);
       state.rating = payload;
     },
     getProductsByCategory: (state, { payload }) => {
       console.log(payload);
-      // const newCategory = state.categories.some(
-      //   (category) => category === payload
-      // )
-      //   ? state.categories.pop((category) => category !== payload)
-      //   : payload;
-      // state.categories.push(newCategory);
 
       if (state.categories.some((category) => category === payload)) {
         state.categories.pop((category) => category !== payload);
@@ -31,12 +25,20 @@ export const filterSlice = createSlice({
       }
     },
     clearFilters: (state) => {
-      state = initialState;
+      state.rating = null;
+      state.sortBy = null;
+      state.categories = [];
     },
   },
 });
 
-const { sortByPrice, sortByRating, getProductsByCategory } =
+const { sortByPrice, sortByRating, getProductsByCategory, clearFilters } =
   filterSlice.actions;
 const filterReducer = filterSlice.reducer;
-export { filterReducer, sortByPrice, sortByRating, getProductsByCategory };
+export {
+  filterReducer,
+  sortByPrice,
+  sortByRating,
+  getProductsByCategory,
+  clearFilters,
+};

@@ -2,10 +2,14 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../actions";
 import {
+  RATING_2_AND_MORE,
+  RATING_3_AND_MORE,
+  RATING_4_AND_MORE,
   SORT_BY_HIGH_TO_LOW,
   SORT_BY_LOW_TO_HIGH,
 } from "../../constants/constants";
 import {
+  clearFilters,
   getProductsByCategory,
   sortByPrice,
   sortByRating,
@@ -14,14 +18,21 @@ import "./filters.css";
 export const Filters = () => {
   const { products } = useSelector((state) => state.products);
   const { sortBy, rating, categories } = useSelector((state) => state.filters);
-  console.log(categories);
+  console.log(clearFilters);
   const allCategories = getCategories(products);
   const dispatch = useDispatch();
   return (
     <div className="filters">
       <div className="filters__header">
         <h1>Filters</h1>
-        <button>Clear All</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(clearFilters());
+          }}
+        >
+          Clear All
+        </button>
       </div>
       <h1>Sort By</h1>
       <div className="filters__filter">
@@ -75,21 +86,35 @@ export const Filters = () => {
       <h1>Rating</h1>
       <div className="filters__filter">
         <div>
-          <input id="four" type="radio" name="star"></input>
-          <label htmlFor="four">4 Star</label>
+          <input
+            id="four"
+            type="radio"
+            name="star"
+            checked={rating === RATING_4_AND_MORE}
+            onChange={() => dispatch(sortByRating(RATING_4_AND_MORE))}
+          ></input>
+          <label htmlFor="four">4 Star & above</label>
         </div>
 
         <div>
-          <input id="three" type="radio" name="star"></input>
-          <label htmlFor="three">3 Star</label>
+          <input
+            id="three"
+            type="radio"
+            name="star"
+            checked={rating === RATING_3_AND_MORE}
+            onChange={() => dispatch(sortByRating(RATING_3_AND_MORE))}
+          ></input>
+          <label htmlFor="three">3 Star & above</label>
         </div>
         <div>
-          <input id="two" type="radio" name="star"></input>
-          <label htmlFor="two">2 Star</label>
-        </div>
-        <div>
-          <input id="one" type="radio" name="star"></input>
-          <label htmlFor="one">1 Star</label>
+          <input
+            id="two"
+            type="radio"
+            name="star"
+            checked={rating === RATING_2_AND_MORE}
+            onChange={() => dispatch(sortByRating(RATING_2_AND_MORE))}
+          ></input>
+          <label htmlFor="two">2 Star & above</label>
         </div>
       </div>
     </div>
