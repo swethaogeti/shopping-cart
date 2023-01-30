@@ -18,7 +18,7 @@ import "./filters.css";
 export const Filters = () => {
   const { products } = useSelector((state) => state.products);
   const { sortBy, rating, categories } = useSelector((state) => state.filters);
-  console.log(clearFilters);
+
   const allCategories = getCategories(products);
   const dispatch = useDispatch();
   return (
@@ -57,13 +57,7 @@ export const Filters = () => {
           <label htmlFor="low-to-high">Price-Low To High</label>
         </div>
       </div>
-      <h1>Price</h1>
-      <div className="filters__filter">
-        <div>
-          <input type="range" max="1500" min="100" id="slider"></input>
-          <label htmlFor="slider">Price</label>
-        </div>
-      </div>
+
       <h1>Genre Category</h1>
       <div className="filters__filter">
         {allCategories.map((category) => {

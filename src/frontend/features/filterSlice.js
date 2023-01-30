@@ -24,11 +24,7 @@ export const filterSlice = createSlice({
         state.categories.push(payload);
       }
     },
-    clearFilters: (state) => {
-      state.rating = null;
-      state.sortBy = null;
-      state.categories = [];
-    },
+    clearFilters: (state) => Object.assign(state, initialState),
   },
 });
 
