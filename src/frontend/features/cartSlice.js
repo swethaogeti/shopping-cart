@@ -77,7 +77,6 @@ const cartSlice = createSlice({
     cartTotal: (state) => {
       state.cart.reduce(
         (acc, curr) => {
-          console.log(acc, curr);
           state.cartTotalProducts = acc.cartTotalProducts + curr.qty;
           state.cartTotalPrice =
             acc.cartTotalPrice + curr.qty * curr.originalPrice;

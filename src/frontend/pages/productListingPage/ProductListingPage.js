@@ -9,7 +9,10 @@ import {
 import { Filters, ProductCard } from "../../components";
 import { getAllProducts } from "../../features/productsSlice";
 import "./productListingPage.css";
-
+import {
+  SORT_BY_LOW_TO_HIGH,
+  RATING_2_AND_MORE,
+} from "../../constants/constants";
 export const ProductListingPage = () => {
   const navigate = useNavigate();
   const { products } = useSelector((state) => state.products);
@@ -19,18 +22,20 @@ export const ProductListingPage = () => {
   }, []);
   const { rating, sortBy, categories } = useSelector((state) => state.filters);
 
-  const categoryProducts = getCategoriesProducts(products, categories);
-  const ratingProducts = getRatedProducts(categoryProducts, rating);
-  const finalProducts = getSortedProducts(ratingProducts, sortBy) || products;
-  console.log(finalProducts);
+  const sortProducts = getSortedProducts(
+    products,
+    sortBy || SORT_BY_LOW_TO_HIGH
+  );
+  const ratingProducts = getRatedProducts(
+    sortProducts,
+    rating || RATING_2_AND_MORE
+  );
+  const finalProducts = getCategoriesProducts(ratingProducts, categories);
+
   return (
     <div className="productlisting">
       <Filters />
       <div className="productlisting__products">
-        {/* {finalProducts.map((product) => {
-          return <ProductCard key={product._id} product={product} />;
-        })} */}
-
         {finalProducts.length > 0
           ? finalProducts.map((product) => {
               return <ProductCard key={product._id} product={product} />;

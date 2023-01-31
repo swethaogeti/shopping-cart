@@ -78,7 +78,7 @@ export const products = [
   {
     _id: uuid(),
     title: "One Hundred Years of Solitude",
-    author: "Gabriel Garcia Marquez and Gregory Rabassa ",
+    author: "Gabriel Garcia Marquez ",
     description:
       "Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice Gabriel Garcia Marquez's great masterpiece is the story of seven generations of the Buendia family and of Macondo, the town they have built. Though little more than a settlement surrounded by mountains, Macondo has its wars and disasters, even its wonders and its miracles. A microcosm of Columbian life, its secrets lie hidden, encoded in a book, and only Aureliano Buendia can fathom its mysteries and reveal its shrouded destiny. Blending political reality with magic realism, fantasy and comic invention, One Hundred Years of Solitude is one of the most daringly original works of the twentieth century.",
     genre: "Classic",
@@ -86,7 +86,7 @@ export const products = [
     discount: 80,
     discountedPrice: 272,
     rating: 4,
-    img: "https://m.media-amazon.com/images/I/71p8OHwvPsL._AC_UY327_FMwebp_QL65_.jpg",
+    img: "https://m.media-amazon.com/images/I/91hJ+hgZm4L._AC_UY327_FMwebp_QL65_.jpg",
   },
 
   {
