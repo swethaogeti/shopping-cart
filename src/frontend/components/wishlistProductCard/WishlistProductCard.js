@@ -1,6 +1,7 @@
-import { Delete, Favorite } from "@material-ui/icons";
+import { Delete, ShoppingCartRounded } from "@material-ui/icons";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addProductToCart } from "../../features/cartSlice";
 import { removeProductFromWishlist } from "../../features/wishlistSlice";
 import "./wishlistProductCard.css";
@@ -15,7 +16,7 @@ export const WishlistProductCard = ({ product }) => {
     originalPrice,
     discountedPrice,
   } = product;
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
 
@@ -25,22 +26,16 @@ export const WishlistProductCard = ({ product }) => {
   const handleDeleteProductFromWishlist = async (token, productId) => {
     const res = await dispatch(removeProductFromWishlist(token, productId));
   };
+  const { cart } = useSelector((state) => state.cart);
 
   return (
     <div className="wishlistCard">
       <div className="wishlistCard__img">
         <img src={img} alt="wishlist-product-img"></img>
-        <div className="wishlistCard__img__icon">
-          <Favorite
-            onClick={() =>
-              handleDeleteProductFromWishlist({ token, productId: _id })
-            }
-          />
-        </div>
       </div>
 
       <div className="wishlistCard__desp">
-        <div>
+        <div className="wishlistCard__desp__container">
           <h2>{title}</h2>
           <p>by {author}</p>
           <div className="wishlistCard__desp__price">
@@ -52,11 +47,25 @@ export const WishlistProductCard = ({ product }) => {
           <p>{description}</p>
         </div>
 
-        <div className="wishlistCard__desp__btn">
-          <button onClick={() => handleAddToCart({ token, product })}>
-            Add To Cart
-          </button>
-        </div>
+        {cart.find((cartProduct) => cartProduct._id === _id) ? (
+          <div className="wishlistCard__desp__btn">
+            <button className="wishlist__btn" onClick={() => navigate("/cart")}>
+              Go To Cart
+            </button>
+          </div>
+        ) : (
+          <div className="wishlistCard__desp__btn">
+            <button
+              onClick={() =>
+                token
+                  ? handleAddToCart({ token, product })
+                  : navigate("/signup")
+              }
+            >
+              Add To Cart
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="wishlistCard__delete">

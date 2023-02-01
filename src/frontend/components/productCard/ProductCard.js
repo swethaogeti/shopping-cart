@@ -32,7 +32,7 @@ export const ProductCard = ({ product }) => {
   const { cart } = useSelector((state) => state.cart);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  console.log(cart);
+
   const handleAddToCart = async (token, product) => {
     const res = await dispatch(addProductToCart(token, product));
   };

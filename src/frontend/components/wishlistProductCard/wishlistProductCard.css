@@ -1,7 +1,7 @@
 .wishlistCard {
   display: flex;
-  width: 50rem;
-  /* max-height: 18rem; */
+  max-width: 40rem;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.8rem;
   margin: 1rem;
@@ -9,10 +9,11 @@
   border: 1px solid var(--color-gray-one);
   background-color: white;
   box-shadow: var(--box-shadow);
+  cursor: pointer;
 }
 
 .wishlistCard__img {
-  width: 20.5%;
+  width: 22.5%;
   position: relative;
   flex-shrink: 1;
   object-fit: contain;
@@ -44,10 +45,12 @@
   margin: 0 0.5rem 0.5rem 0.5rem;
   justify-content: space-between;
   flex-direction: column;
-
-  /* outline: 1px solid black; */
 }
 
+.wishlistCard__desp__container > h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 .wishlistCard__desp__price {
   display: flex;
   align-items: center;
@@ -56,6 +59,9 @@
 
 .wishlistCard__desp__price > span {
   text-decoration: line-through;
+}
+.wishlistCard__desp__price > h2 {
+  font-size: 1rem;
 }
 .wishlistCard__desp__price > h3 {
   color: var(--color-pink);
@@ -66,6 +72,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  font-size: 0.9rem;
   -webkit-box-orient: vertical;
 }
 .wishlistCard__delete__icon {
@@ -79,7 +86,15 @@
   border: none;
   padding: 0.5rem 1rem;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border-radius: 3px;
   font-weight: bold;
+  margin: 0.4rem 0;
+  cursor: pointer;
+}
+
+.wishlistCard__desp__btn > .wishlist__btn {
+  background-color: white;
+  border: 2px solid var(--color-pink);
+  color: var(--color-pink);
 }
