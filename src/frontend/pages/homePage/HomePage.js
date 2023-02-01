@@ -1,3 +1,4 @@
+import sign from "jwt-encode";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,7 +15,7 @@ export const HomePage = () => {
   }, []);
 
   const trendingProducts = products.filter((item) => item.trending === true);
-  console.log(trendingProducts);
+
   return (
     <div className="homePage">
       <div className="homePage__container">
@@ -25,7 +26,7 @@ export const HomePage = () => {
               Not sure What To Read Next? Explore Our Catalog of Public Domain
               Books with Our Editors
             </p>
-            <button>SHOP NOW</button>
+            <button onClick={() => navigate("/products")}>SHOP NOW</button>
           </div>
           <div className="homePage__container__hero__right">
             <img

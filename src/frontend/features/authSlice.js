@@ -38,6 +38,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     signout: (state) => {
+      console.log(state);
       state.token = null;
       state.user = null;
     },

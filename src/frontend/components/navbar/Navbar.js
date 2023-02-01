@@ -1,8 +1,23 @@
 import React from "react";
-import { Person, SearchRounded, ShoppingCart } from "@material-ui/icons";
+import { Favorite, ExitToAppRounded, ShoppingCart } from "@material-ui/icons";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signout } from "../../features/authSlice";
+import { USER_DATA, USER_TOKEN } from "../../constants/constants";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const res = dispatch(signout());
+    localStorage.removeItem(USER_TOKEN);
+    localStorage.removeItem(USER_DATA);
+    navigate("/");
+    toast("Logged out");
+  };
   return (
     <>
       <div className="navbar">
@@ -27,27 +42,35 @@ export const Navbar = () => {
                 Products
               </Link>
             </li>
-            <li>
-              <Link to="/login" className="navbar__center__link">
-                Login
-              </Link>
-              {/* <Link to="/login" className="navbar__center__link">
-                Login
-              </Link> */}
-              <Link to="/signup" className="navbar__center__link">
-                Signup
-              </Link>
-            </li>
+            <li></li>
           </ul>
         </div>
+
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="navbar__right">
-          <SearchRounded className="navbar__right__icon" />
+          <Link to="/wishlist">
+            <Favorite className="navbar__right__icon" />
+          </Link>
+
           <Link to="/cart">
             <ShoppingCart className="navbar__right__icon" />
           </Link>
-          <Link to="/wishlist">
-            <Person className="navbar__right__icon" />
-          </Link>
+
+          <ExitToAppRounded
+            onClick={() => handleLogout()}
+            className="navbar__right__icon"
+          />
         </div>
       </div>
     </>
