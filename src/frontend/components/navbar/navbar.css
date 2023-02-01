@@ -3,12 +3,10 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  /* box-shadow: var(--box-shadow); */
   left: 0;
   right: 0;
   top: 0;
-  /* background-color: #fef2f4; */
-  /* background-color: #fafafa; */
+  background-color: rgb(254, 249, 250);
   flex-wrap: wrap;
   position: sticky;
   padding: 0.5rem 1rem;
@@ -50,7 +48,6 @@
 }
 .navbar__right {
   display: flex;
-  /* padding: 0 1rem; */
 }
 
 .navbar__right__icon {

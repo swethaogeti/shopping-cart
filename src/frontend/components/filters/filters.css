@@ -1,7 +1,18 @@
 .filters {
   display: flex;
   flex-direction: column;
-  outline: 1px solid black;
+  gap: 1rem;
+  padding: 0 1rem;
+  position: sticky;
+  top: 5rem;
+}
+
+.filters > h1 {
+  font-size: 1rem;
+  color: rgb(23, 23, 23);
+  border: 2px solid var(--color-pink);
+  padding: 0.1rem;
+  border-radius: 2px;
 }
 
 .filters__filter {
@@ -11,4 +22,20 @@
 
 .filters__header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters__header > h1 {
+  font-size: 1.5rem;
+  color: rgb(29, 27, 27);
+}
+
+.filters__header > button {
+  background-color: var(--color-pink);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 3px;
+  font-weight: 500;
 }
