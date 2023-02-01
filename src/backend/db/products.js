@@ -45,6 +45,7 @@ export const products = [
     discount: 20,
     discountedPrice: 216,
     rating: 5,
+    trending: true,
     img: "https://m.media-amazon.com/images/I/516c6gUQLaL.jpg",
   },
 
@@ -100,6 +101,7 @@ export const products = [
     discount: 75,
     discountedPrice: 599,
     rating: 5,
+    trending: true,
     img: "https://m.media-amazon.com/images/I/51sY0P7C3EL._SX326_BO1,204,203,200_.jpg",
   },
 
@@ -113,6 +115,7 @@ export const products = [
     originalPrice: 700,
     discount: 74,
     discountedPrice: 155,
+    trending: true,
     rating: 5,
     img: "https://m.media-amazon.com/images/I/812SKExc1tL.jpg",
   },
@@ -217,6 +220,7 @@ export const products = [
     originalPrice: 350,
     discount: 35,
     discountedPrice: 228,
+    trending: true,
     rating: 5,
     img: "https://m.media-amazon.com/images/I/71j1A2OX3nL._AC_UY327_FMwebp_QL65_.jpg",
   },
