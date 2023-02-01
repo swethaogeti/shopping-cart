@@ -1,11 +1,17 @@
 import {
   FavoriteBorderOutlined,
+  Favorite,
   ShoppingCartRounded,
 } from "@material-ui/icons";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductToCart } from "../../features/cartSlice";
-import { moveProductToWishlist } from "../../features/wishlistSlice";
+import { useLocation, useNavigate } from "react-router-dom";
+import { addProductToCart, getCartProducts } from "../../features/cartSlice";
+import {
+  getWishlistProducts,
+  moveProductToWishlist,
+  removeProductFromWishlist,
+} from "../../features/wishlistSlice";
 import "./productCard.css";
 
 export const ProductCard = ({ product }) => {
@@ -19,10 +25,14 @@ export const ProductCard = ({ product }) => {
     originalPrice,
     discountedPrice,
   } = product;
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
-
+  const { wishlist } = useSelector((state) => state.wishlist);
+  const { cart } = useSelector((state) => state.cart);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  console.log(cart);
   const handleAddToCart = async (token, product) => {
     const res = await dispatch(addProductToCart(token, product));
   };
@@ -31,16 +41,36 @@ export const ProductCard = ({ product }) => {
     const res = await dispatch(moveProductToWishlist(token, product));
     console.log(res);
   };
+
+  const handleDeleteProductFromWishlist = async (token, productId) => {
+    const res = await dispatch(removeProductFromWishlist(token, productId));
+  };
   return (
     <div className="productCard" key={_id}>
       <div className="productCard__img">
         <img src={img} alt={title}></img>
-        <div className="productCard__img__icon">
-          <FavoriteBorderOutlined
-            className="icon"
-            onClick={() => handleMoveToWishlist({ token, product })}
-          />
-        </div>
+
+        {wishlist.find((wishlistProduct) => wishlistProduct._id === _id) ? (
+          <div className="productCard__img__icon">
+            <Favorite
+              className="wishlist__red"
+              onClick={() =>
+                handleDeleteProductFromWishlist({ token, productId: _id })
+              }
+            />
+          </div>
+        ) : (
+          <div className="productCard__img__icon">
+            <FavoriteBorderOutlined
+              className="icon"
+              onClick={() =>
+                token
+                  ? handleMoveToWishlist({ token, product })
+                  : navigate("/signup")
+              }
+            />
+          </div>
+        )}
       </div>
 
       <div className="productCard__details">
@@ -54,10 +84,21 @@ export const ProductCard = ({ product }) => {
           <h3>{discount}% Off</h3>
         </div>
 
-        <button onClick={() => handleAddToCart({ token, product })}>
-          <ShoppingCartRounded />
-          <h4>Go to Cart</h4>
-        </button>
+        {cart.find((cartProduct) => cartProduct._id === _id) ? (
+          <button className="btn__cart" onClick={() => navigate("/cart")}>
+            <h4>Go To Cart</h4>
+          </button>
+        ) : (
+          <button
+            onClick={() =>
+              token ? handleAddToCart({ token, product }) : navigate("/signup")
+            }
+          >
+            <ShoppingCartRounded />
+
+            <h4>Add To Cart</h4>
+          </button>
+        )}
       </div>
     </div>
   );

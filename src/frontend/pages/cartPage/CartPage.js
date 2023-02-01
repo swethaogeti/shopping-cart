@@ -5,17 +5,11 @@ import { CartProductCard, CartTotal } from "../../components";
 import { getCartProducts } from "../../features/cartSlice";
 import "./cartPage.css";
 export const CartPage = () => {
-  const {
-    cart,
-    cartTotalAmount,
-    cartTotalDiscount,
-    cartTotalProducts,
-    cartTotalPrice,
-  } = useSelector((state) => state.cart);
+  const { cart } = useSelector((state) => state.cart);
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   console.log(token, "cart token");
-  console.log(cart);
+
   useEffect(() => {
     dispatch(getCartProducts(token));
   }, []);

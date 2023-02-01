@@ -1,11 +1,22 @@
-import { Add, Remove } from "@material-ui/icons";
+import {
+  Add,
+  Favorite,
+  FavoriteBorderOutlined,
+  Remove,
+} from "@material-ui/icons";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   removeProductFromCart,
   updateQuantityOfProductInCart,
 } from "../../features/cartSlice";
+import {
+  moveProductToWishlist,
+  removeProductFromWishlist,
+} from "../../features/wishlistSlice";
 import "./cartProductCard.css";
+
 export const CartProductCard = ({ product }) => {
   const {
     _id,
@@ -21,7 +32,8 @@ export const CartProductCard = ({ product }) => {
   } = product;
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  const { wishlist } = useSelector((state) => state.wishlist);
   const handleDeleteProductFromCart = async (token, productId) => {
     const res = await dispatch(removeProductFromCart(token, productId));
   };
@@ -33,15 +45,45 @@ export const CartProductCard = ({ product }) => {
     console.log(res);
   };
 
+  const handleMoveToWishlist = async (token, product) => {
+    const res = await dispatch(moveProductToWishlist(token, product));
+    console.log(res);
+  };
+
+  const handleDeleteProductFromWishlist = async (token, productId) => {
+    const res = await dispatch(removeProductFromWishlist(token, productId));
+  };
+
   return (
     <div className="cartCard">
       <div className="cartCard__img">
         <img src={img} alt="cart-product-img"></img>
+        {wishlist.find((wishlistProduct) => wishlistProduct._id === _id) ? (
+          <div className="cartCard__img__icon">
+            <Favorite
+              className="cartCard__red"
+              onClick={() =>
+                handleDeleteProductFromWishlist({ token, productId: _id })
+              }
+            />
+          </div>
+        ) : (
+          <div className="cartCard__img__icon">
+            <FavoriteBorderOutlined
+              className="icon"
+              onClick={() =>
+                token
+                  ? handleMoveToWishlist({ token, product })
+                  : navigate("/signup")
+              }
+            />
+          </div>
+        )}
       </div>
 
       <div className="cartCard__desp">
-        <div>
-          <h2>{title}</h2>
+        <div className="cartCard__desp__container">
+          <h2 className="heading">{title}</h2>
           <p>by {author}</p>
           <div className="cartCard__desp__price">
             <h2>₹{discountedPrice}</h2>
@@ -66,7 +108,7 @@ export const CartProductCard = ({ product }) => {
               <Remove />
             </button>
 
-            <h3>{qty}</h3>
+            <p>{qty}</p>
 
             <button
               onClick={() => {
@@ -92,7 +134,7 @@ export const CartProductCard = ({ product }) => {
       </div>
       <div className="cartCard__total">
         <p>Total Price</p>
-        <h2>₹{discountedPrice * qty}</h2>
+        <h4>₹{discountedPrice * qty}</h4>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
   position: relative;
   /* margin: 1rem; */
   max-width: 280px;
-
+  background-color: white;
   display: flex;
   padding: 0.5rem;
   border-radius: 5px;
@@ -30,7 +30,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid gainsboro;
+  border: 2px solid rgb(246, 48, 97);
   width: 2rem;
   height: 2rem;
   padding: 0.6rem;
@@ -40,6 +40,9 @@
   align-items: center;
   justify-content: center;
   background-color: whitesmoke;
+}
+.productCard__img__icon > .wishlist__red {
+  color: red;
 }
 .productCard__img__icon > .icon {
   color: gray;
@@ -93,6 +96,11 @@
   cursor: pointer;
 }
 
+.productCard__details > .btn__cart {
+  background-color: white;
+  border: 2px solid var(--color-pink);
+  color: var(--color-pink);
+}
 @media screen and (max-width: 800px) {
   .productCard {
     flex-basis: calc(50% - 1rem);

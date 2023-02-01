@@ -67,3 +67,11 @@
   flex-wrap: wrap;
   padding: 2rem;
 }
+@media screen and (max-width: 600px) {
+  .homePage__container__hero__right {
+    display: none;
+  }
+  .homePage__container__hero__left > h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -5,6 +5,9 @@
   box-shadow: var(--box-shadow);
   border: 2px solid var(--color-gray-one);
   border-radius: 5px;
+  position: sticky;
+  top: 7rem;
+  background-color: white;
 }
 
 .cartTotal__detail {
@@ -16,7 +19,8 @@
 
 .cartTotal > h1,
 .cartTotal__detail > h1 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .cartTotal > button {
