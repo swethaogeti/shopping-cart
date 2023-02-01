@@ -98,3 +98,9 @@
   border: 2px solid var(--color-pink);
   color: var(--color-pink);
 }
+
+@media screen and (max-width: 600px) {
+  .wishlistCard__img {
+    width: 150px;
+  }
+}

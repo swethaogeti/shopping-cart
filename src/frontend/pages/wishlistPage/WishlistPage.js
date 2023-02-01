@@ -15,9 +15,13 @@ export const WishlistPage = () => {
   return (
     <div className="wishlist">
       <div className="wishlist__products">
-        {wishlist.map((product) => {
-          return <WishlistProductCard product={product} />;
-        })}
+        {wishlist.length > 0 ? (
+          wishlist.map((product) => {
+            return <WishlistProductCard product={product} />;
+          })
+        ) : (
+          <h2>your Wishlist is Empty</h2>
+        )}
       </div>
     </div>
   );

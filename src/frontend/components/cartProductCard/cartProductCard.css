@@ -116,9 +116,12 @@
 
 @media screen and (max-width: 600px) {
   .cartCard {
-    width: 25rem;
+    width: 20rem;
+    flex-wrap: wrap;
   }
-
+  .cartCard__img {
+    width: 100%;
+  }
   .cartCard__desp__container .heading {
     font-size: 1rem;
   }
