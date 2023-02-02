@@ -26,7 +26,6 @@ const moveProductToWishlist = createAsyncThunk(
   async ({ token, product }, { rejectWithValue }) => {
     try {
       const { data } = await moveProductToWishlistService(token, product);
-      console.log(data);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -63,7 +62,6 @@ const wishlistSlice = createSlice({
     },
 
     [moveProductToWishlist.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.isloading = false;
       state.wishlist = payload.wishlist;
     },

@@ -11,7 +11,7 @@ const getAllProducts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await getProductsServices();
-      console.log(data);
+
       return data;
     } catch (error) {
       rejectWithValue("error occured in get all products");

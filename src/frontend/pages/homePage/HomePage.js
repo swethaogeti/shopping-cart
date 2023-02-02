@@ -9,6 +9,7 @@ import "./homePage.css";
 export const HomePage = () => {
   const navigate = useNavigate();
   const { products } = useSelector((state) => state.products);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllProducts());

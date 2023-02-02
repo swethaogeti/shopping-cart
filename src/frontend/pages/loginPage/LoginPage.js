@@ -24,7 +24,7 @@ export const LoginPage = () => {
         JSON.stringify(response.payload.foundUser)
       );
       toast("Login successful");
-      navigate(from, { replace: true });
+      navigate("/products");
     } else {
       toast("Login Failed");
     }

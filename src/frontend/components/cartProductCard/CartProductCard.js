@@ -42,12 +42,10 @@ export const CartProductCard = ({ product }) => {
     const res = await dispatch(
       updateQuantityOfProductInCart(token, productId, type)
     );
-    console.log(res);
   };
 
   const handleMoveToWishlist = async (token, product) => {
     const res = await dispatch(moveProductToWishlist(token, product));
-    console.log(res);
   };
 
   const handleDeleteProductFromWishlist = async (token, productId) => {

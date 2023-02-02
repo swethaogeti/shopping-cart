@@ -2,7 +2,7 @@ import React from "react";
 import { Favorite, ExitToAppRounded, ShoppingCart } from "@material-ui/icons";
 import "./navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signout } from "../../features/authSlice";
 import { USER_DATA, USER_TOKEN } from "../../constants/constants";
 import { toast, ToastContainer } from "react-toastify";
@@ -10,6 +10,9 @@ import "react-toastify/dist/ReactToastify.css";
 export const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { token } = useSelector((state) => state.auth);
+  const { cart } = useSelector((state) => state.cart);
+  const { wishlist } = useSelector((state) => state.wishlist);
 
   const handleLogout = () => {
     const res = dispatch(signout());
@@ -27,7 +30,9 @@ export const Navbar = () => {
             alt="
           logo"
           ></img>
-          <h1>Story Shop</h1>
+          <Link to="/" className="navbar__left__link">
+            <h1>Story Shop</h1>
+          </Link>
         </div>
         <div className="navbar__center">
           <ul>
@@ -60,17 +65,39 @@ export const Navbar = () => {
         />
         <div className="navbar__right">
           <Link to="/wishlist">
-            <Favorite className="navbar__right__icon" />
+            {token && wishlist.length > 0 ? (
+              <div className="navbar__right__box">
+                <Favorite className="navbar__right__icon" />
+                <div className="count__icon">
+                  <p>{wishlist.length}</p>
+                </div>
+              </div>
+            ) : (
+              <Favorite className="navbar__right__icon" />
+            )}
           </Link>
 
           <Link to="/cart">
-            <ShoppingCart className="navbar__right__icon" />
+            {token && cart.length > 0 ? (
+              <div className="navbar__right__box">
+                <ShoppingCart className="navbar__right__icon" />
+                <div className="count__icon">
+                  <p>{cart.length}</p>
+                </div>
+              </div>
+            ) : (
+              <ShoppingCart className="navbar__right__icon" />
+            )}
           </Link>
 
-          <ExitToAppRounded
-            onClick={() => handleLogout()}
-            className="navbar__right__icon"
-          />
+          {token ? (
+            <ExitToAppRounded
+              onClick={() => handleLogout()}
+              className="navbar__right__icon"
+            />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>

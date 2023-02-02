@@ -8,7 +8,6 @@ export const CartPage = () => {
   const { cart } = useSelector((state) => state.cart);
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  console.log(token, "cart token");
 
   useEffect(() => {
     dispatch(getCartProducts(token));
@@ -29,7 +28,10 @@ export const CartPage = () => {
           </div>
         </>
       ) : (
-        <h2>Your Cart is Empty</h2>
+        <img
+          src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png"
+          alt="empty-cart-img"
+        ></img>
       )}
     </div>
   );

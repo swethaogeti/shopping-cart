@@ -12,12 +12,9 @@ export const filterSlice = createSlice({
       state.sortBy = payload;
     },
     sortByRating: (state, { payload }) => {
-      console.log(payload);
       state.rating = payload;
     },
     getProductsByCategory: (state, { payload }) => {
-      console.log(payload);
-
       if (state.categories.some((category) => category === payload)) {
         state.categories.pop((category) => category !== payload);
       } else {

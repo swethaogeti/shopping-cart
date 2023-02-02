@@ -31,6 +31,7 @@ export const ProductCard = ({ product }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const location = useLocation();
+
   const from = location.state?.from?.pathname || "/";
 
   const handleAddToCart = async (token, product) => {

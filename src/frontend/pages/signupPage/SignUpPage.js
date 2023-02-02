@@ -77,8 +77,7 @@ export const SignUpPage = () => {
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         ></input>
-        {/* <label htmlFor="confirm">Confirm Password*</label>
-        <input type="password" id="confirm"></input> */}
+
         <button>Sign Up</button>
         <ToastContainer
           position="top-center"

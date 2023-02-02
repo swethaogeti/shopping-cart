@@ -13,12 +13,7 @@ export const CartTotal = () => {
     cartTotalPrice,
     cartTotalProducts,
   } = useSelector((state) => state.cart);
-  console.log(
-    cartTotalAmount,
-    cartTotalPrice,
-    cartTotalDiscount,
-    cartTotalProducts
-  );
+
   useEffect(() => {
     dispatch(cartTotal());
   }, [

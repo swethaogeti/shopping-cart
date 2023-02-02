@@ -1,13 +1,11 @@
 .productCard {
   position: relative;
-  /* margin: 1rem; */
   max-width: 280px;
   background-color: white;
   display: flex;
   padding: 0.5rem;
   border-radius: 5px;
   flex-direction: column;
-
   outline: 1px solid rgb(220, 220, 220);
   flex-basis: calc(33.3% - 1rem);
 }
@@ -21,8 +19,6 @@
 }
 .productCard__img > img {
   width: 100%;
-  /* height: 15rem; */
-
   object-fit: contain;
 }
 

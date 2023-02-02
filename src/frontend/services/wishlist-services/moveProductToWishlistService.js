@@ -12,7 +12,7 @@ export const moveProductToWishlistService = async (token, product) => {
         },
       }
     );
-    console.log(data);
+
     return data;
   } catch (err) {
     console.log(err.message);
